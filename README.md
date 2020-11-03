@@ -1,5 +1,7 @@
 # CoffeeHome
 
+![alt text](https://github.com/CASSIOSOUZA/CoffeeHome/blob/main/Prints/home_01.jpg?raw=true)
+
 # Proposta do Projeto
 
 - Teste de Recrutamento – Máquina de Café Virtual
