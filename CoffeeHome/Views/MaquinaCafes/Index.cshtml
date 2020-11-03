@@ -1,0 +1,210 @@
+﻿@model CoffeeHome.Models.MaquinaCafe
+
+@{
+    ViewData["Title"] = "Bem vindo ao Cassio - CoffeeHome";
+}
+
+<div class="alert alert-dismissible alert-Coffee ">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong></strong>
+</div>
+
+
+<div class="container">
+    <div id="alerts" style=" z-index: 1" />
+    <div class="col-sm-12">
+
+        <div class="wizard-container">
+
+            <div class="card wizard-card" data-color="orange" id="wizardProfile">
+
+                <form asp-action="Create">
+                    <div class="wizard-header text-center">
+                        <h3 class="wizard-title">Bem vindo ao Coffee Home!</h3>
+                        <p class="category">Vamos escolher seu café.</p>
+                    </div>
+
+                    <div class="wizard-navigation">
+                        <div class="progress-with-circle">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3" style="width: 21%;"></div>
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="#coffee" data-toggle="tab">
+                                    <div class="icon-circle"><i class="ti-shopping-cart"></i></div>Café
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#pay" data-toggle="tab">
+                                    <div class="icon-circle"><i class="ti-money"></i></div>Pagamento
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#remove" data-toggle="tab">
+                                    <div class="icon-circle"><i class="ti-package"></i></div>Finalização
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-content">
+                        <div class="tab-pane" id="coffee">
+                            <h5 class="info-text"> Escolha uma opção abaixo. </h5>
+                            <div class="row">
+                                <div class="col-sm-8 col-sm-offset-2">
+                                    <div class="col-sm-4">
+                                        <div class="choice choiceCappuccino" data-toggle="wizard-checkbox" onclick="paperbootstrapwizard.SetaOpcaoSelecionada('Cappuccino')">
+
+                                            <div class="card card-checkboxes card-hover-effect">
+                                                <div class="" data-type="img" data-large="https://www.flaticon.com/svg/static/icons/svg/3650/3650525.svg">
+                                                    <img src="https://www.flaticon.com/svg/static/icons/svg/119/119221.svg" alt="Cup carrier free icon" title="Cup carrier free icon" class="loaded">
+                                                </div>
+                                                <p class="pCappuccino">Cappuccino</p>
+                                                <span class="vCappuccino" asp-for="ValorCafe">R$3,50</span>
+                                            </div>
+                                            <label class="btn btn-secondary">
+                                                <input asp-for="TipoCafe" type="radio" id="option2" value="1"> Selecione
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="choice choiceMocha" data-toggle="wizard-checkbox" onclick="paperbootstrapwizard.SetaOpcaoSelecionada('Mocha')">
+
+                                            <div class="card card-checkboxes card-hover-effect">
+                                                <div class="" data-type="img" data-large="https://www.flaticon.com/svg/static/icons/svg/3650/3650525.svg">
+
+                                                    <img src="https://www.flaticon.com/svg/static/icons/svg/2405/2405535.svg" alt="Cup carrier free icon" title="Cup carrier free icon" class="loaded">
+                                                </div>
+                                                <p class="pMocha">Mocha</p>
+                                                <span class="vMocha" asp-for="ValorCafe">R$4,00</span>
+                                            </div>
+                                            <label class="btn btn-secondary">
+                                                <input asp-for="TipoCafe" type="radio" id="option2" value="2"> Selecione
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="choice choiceCafeComLeite" data-toggle="wizard-checkbox" onclick="paperbootstrapwizard.SetaOpcaoSelecionada('CafeComLeite')">
+
+                                            <div class="card card-checkboxes card-hover-effect">
+                                                <div class="" data-type="img" data-large="https://www.flaticon.com/svg/static/icons/svg/3650/3650525.svg">
+                                                    <img src="https://www.flaticon.com/svg/static/icons/svg/714/714803.svg" alt="Café com Leite" title="Café com Leite" class="loaded">
+                                                </div>
+                                                <p class="pCafeComLeite">Café com Leite</p>
+                                                <span class="vCafeComLeite" asp-for="ValorCafe">R$3,00</span>
+                                            </div>
+                                            <label class="btn btn-secondary">
+                                                <input asp-for="TipoCafe" type="radio" id="option2" value="3"> Selecione
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="pay">
+
+                            <table class="table table-sm table-greem">
+                                <thead>
+                                <tr class="text-center">
+                                    <th colspan="2" scope="col" style="font-size: 20px">Escolha as moedas</th>
+                                </tr>
+                                </thead>
+                                <tbody class="text-center">
+                                <tr>
+                                    <td>R$0,01</td>
+                                    <td>
+                                        <input class="colorNumber" asp-for="UmCentavo" type="number" value="0"/><br/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>R$0,05</td>
+                                    <td>
+                                        <input class="colorNumber" asp-for="CincoCentavo" type="number" value="0"/>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>R$0,10</td>
+                                    <td>
+                                        <input class="colorNumber" asp-for="DezCentavo" type="number" value="0"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>R$0,25</td>
+                                    <td>
+                                        <input class="colorNumber" asp-for="VinteCincoCentavo" type="number" value="0"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>R$0,50</td>
+                                    <td>
+                                        <input class="colorNumber" asp-for="CinquentaCentavo" type="number" value="0"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>R$1,00</td>
+                                    <td>
+                                        <input class="colorNumber" asp-for="UmReal" type="number" value="0"/>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="tab-pane" id="remove">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h5 class="info-text"> Seu pedido está correto? </h5>
+                                </div>
+                                <div class="col-sm-7 col-sm-offset-1">
+                                    <div class="form-group">
+                                        <label>Itens Pedido</label>
+                                        <input type="text" class="form-control itensPedido">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label>Valor total</label>
+                                        <input type="text" class="form-control valorTotal">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wizard-footer">
+                        <div class="pull-right">
+                            <input type='button' class='btn btn-next btn-fill btn-warning btn-wd' name='next' value='Proximo'/>
+                            <input type="submit" class='btn btn-finish btn-fill btn-warning btn-wd btn-success btn-lg btn-block' name='finish' value='Comprar'/>
+                           
+                        </div>
+
+                        <div class="pull-left">
+                            <input type='button' class='btn btn-previous btn-default btn-wd' name='previous' value='Voltar'/>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="~/assets/lib/jquery/dist/jquery.js"></script>
+<script src="~/assets/js/paperbootstrapwizard.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        paperbootstrapwizard.Inicializador();
+    });
+</script>
+
+
+
+
+

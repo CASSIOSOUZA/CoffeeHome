@@ -1,0 +1,27 @@
+﻿@model CoffeeHome.Models.MaquinaCafe
+
+
+<div class="wizard-header text-center">
+    <br><br> <h2 style="color:#a20e09">Erro ao efetuar o pedido!</h2>
+
+    <p class="category">Que pena que não deu certo o seu pedido, mais podemos tentar novamente :).</p>
+</div>
+
+<div class="alert alert-danger" role="alert">
+    <h4 class="alert-heading">Café escolhido: @Model.Descricao</h4>
+    <p>Valor do item: R$ @Model.ValorCafe</p>
+    <p>Valor pago: R$ @Model.ValorAceito </p>
+    <hr>
+    <p class="mb-0">Troco: R$ @Model.Troco</p>
+</div>
+<br />
+
+<a asp-action="Index" class="btn  btn-success">Fazer um novo pedido?</a>
+
+
+
+
+
+
+
+
